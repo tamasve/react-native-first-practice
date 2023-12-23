@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default function ListScroll(): React.JSX.Element {
+/**
+ * FlatList instead of normal list with Text
+ */
+
+export default function FlatListUse(): React.JSX.Element {
 
     // for the RefreshControl: when pulling down it immedately stops refreshing (showing the sign)
     const [refresh, setRefresh] = useState(false);
@@ -29,8 +33,13 @@ export default function ListScroll(): React.JSX.Element {
         setRefresh(false);
     }
 
+    // FlatList: renderItem brings the items in objects, and ensures the inner keys for the items
+    // If the items does not have a 'key', we can give a function for generating the keys:
+    // keyExtractor={(item, index) => index.toString()}  - here from the indexes
+    // it is obligatory if we want more than 1 column
     return (
         <View style={styles.body}>
+
             <Text style={[styles.text, {backgroundColor:'#ee9900'}]}>MAIN PAGE</Text>
             <ScrollView horizontal style={styles.scroll}>
                 <Text style={styles.text}>Menu1</Text>
@@ -38,7 +47,29 @@ export default function ListScroll(): React.JSX.Element {
                 <Text style={styles.text}>Menu3</Text>
                 <Text style={styles.text}>Menu4</Text>
             </ScrollView>
-            <ScrollView refreshControl={<RefreshControl 
+
+            <FlatList numColumns={2}
+                keyExtractor={(item, index) => index.toString()}
+                data={data}
+                renderItem={({item}) => (
+                            <View style={styles.item} >
+                                <Text style={styles.text}>{item.key} - {item.name}</Text>
+                            </View>)}
+            />
+            <FlatList horizontal inverted
+                keyExtractor={(item, index) => index.toString()}
+                data={data}
+                renderItem={({item}) => (
+                            <View style={styles.item} >
+                                <Text style={styles.text}>{item.key} - {item.name}</Text>
+                            </View>)}
+                refreshControl={<RefreshControl 
+                    refreshing={refresh}
+                    onRefresh={() => listRefresh()}
+                    colors={["red"]}/>}
+            />
+
+            {/* <ScrollView refreshControl={<RefreshControl 
                         refreshing={refresh}
                         onRefresh={() => listRefresh()}
                         colors={["red"]}/>}>
@@ -46,7 +77,7 @@ export default function ListScroll(): React.JSX.Element {
                 <View style={styles.item} key={key}>
                     <Text style={styles.text}>{item.key} - {item.name}</Text>
                 </View>)}
-            </ScrollView>
+            </ScrollView> */}
         </View>
     )
 
