@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RefreshControl, ScrollView, SectionList, StyleSheet, Text, View } from 'react-native';
 
 /**
- * SectionList instead of normal list with Text
+ * SectionList instead of normal list with Text - it is good for NESTED data objects
  */
 
 export default function SectionListUse(): React.JSX.Element {
@@ -26,7 +26,7 @@ export default function SectionListUse(): React.JSX.Element {
     //     {key: 8, name: "tomato"},
     // ]);
 
-    // IMPORTANT! - the inner arrays key name should be 'data' for the 'sections' prop to work
+    // IMPORTANT! - the inner arrays (the nested object) key name should be 'data' for the 'sections' prop to work
     const nestedArray = [
         {
             title: 'Title 1',
@@ -54,6 +54,7 @@ export default function SectionListUse(): React.JSX.Element {
     // }
 
     // SectionList: similar to FlatList, but it handles only the nested arrays
+    // renderItem can be easier: we do not need the View component
     return (
         <View style={styles.body}>
             <Text style={[styles.text, {backgroundColor:'#ee9900'}]}>MAIN PAGE</Text>

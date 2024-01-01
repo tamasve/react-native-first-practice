@@ -22,7 +22,7 @@ export default function ListScroll(): React.JSX.Element {
         {key: 8, name: "tomato"},
     ])
 
-    // refresh the list and meanwhile refresh spin is spinning
+    // refresh the list and meanwhile refresh spin is spinning (refreshing={refresh} in RefreshControl, which is a state)
     const listRefresh = () => {
         setRefresh(true);
         setData([...data, {key: 9, name: "joghurt"}]);

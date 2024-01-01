@@ -18,7 +18,7 @@ export default function StretchedItems(): React.JSX.Element {
     )
 }
 
-// flex direction = column (default), no wrap, stretched horizontally
+// flex direction = column (default), no wrap (default), stretched horizontally (alignItems: 'stretch')
 
 const styles = StyleSheet.create({
     body: {
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
         width: 300,
         backgroundColor: 'pink',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'flex-end',
+        paddingRight: 30
     },
     view3: {
         // flex: 1,

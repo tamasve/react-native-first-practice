@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FlatList, RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 /**
- * FlatList instead of normal list with Text
+ * FlatList instead of normal list with Text or ScrollView - it is better, because does not render the entire data, only what is required
  */
 
 export default function FlatListUse(): React.JSX.Element {
@@ -33,7 +33,7 @@ export default function FlatListUse(): React.JSX.Element {
         setRefresh(false);
     }
 
-    // FlatList: renderItem brings the items in objects, and ensures the inner keys for the items
+    // FlatList: renderItem prop brings the items in objects, and ensures the inner keys for the items
     // If the items does not have a 'key', we can give a function for generating the keys:
     // keyExtractor={(item, index) => index.toString()}  - here from the indexes
     // it is obligatory if we want more than 1 column

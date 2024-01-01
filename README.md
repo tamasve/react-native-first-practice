@@ -1,4 +1,4 @@
-# First React Native project for practices during watching Mash's tutorial
+# First React Native project for practices during watching Mash's 7H tutorial
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 

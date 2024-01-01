@@ -1,7 +1,8 @@
 /**
  * First Practice React Native App
- * 21-22 Dec 2023
- * next: #11
+ * practices during watching Mash's 7H tutorial
+ * 21-22 Dec 2023, 1- Jan 2024
+ * next: #12
  */
 
 import React from 'react';
@@ -17,6 +18,7 @@ import StretchedItems2 from './StretchedItems2';
 import FlatListUse from './FlatListUse';
 import SectionListUse from './SectionListUse';
 import RefreshedListExercise from './RefreshedListExercise';
+import Input from './Input';
 
 
 function App(): React.JSX.Element {
@@ -29,7 +31,8 @@ function App(): React.JSX.Element {
       {/* <ListScroll /> */}
       {/* <FlatListUse /> */}
       {/* <SectionListUse /> */}
-      <RefreshedListExercise />
+      {/* <RefreshedListExercise /> */}
+      <Input />
     </View>
   );
 }

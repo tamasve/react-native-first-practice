@@ -14,6 +14,7 @@ export default function RefreshedListExercise(): React.JSX.Element {
         data: string[]
     }
 
+    // initial data
     const [tasks, setTasks] = useState<TaskType[]> ([
         {
             task: 'Task 1',
@@ -21,7 +22,7 @@ export default function RefreshedListExercise(): React.JSX.Element {
         },
     ]);
 
-    // refresh the list and meanwhile refresh spin is spinning
+    // refresh the list and meanwhile refresh spin is spinning (refreshing={refresh} in RefreshControl, which is a state)
     const listRefresh = () => {
         setRefresh(true);
         const count = tasks.length + 1;
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         fontSize: 30,
         padding: 20,
+        fontWeight: "700",
     },
     task: {
         height: 150,
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         fontSize: 30,
         padding: 20,
-        borderWidth: 2,
+        borderWidth: 5,
         borderColor: 'black'
     },
     item: {

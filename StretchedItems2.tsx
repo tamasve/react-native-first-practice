@@ -19,6 +19,7 @@ export default function StretchedItems2(): React.JSX.Element {
 }
 
 // flex direction = row, wrap, no stretching
+// not clear how much do flex numbers and their proportions count in some cases...
 
 const styles = StyleSheet.create({
     body: {
@@ -29,8 +30,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue'
     },
     view1: {
-        // flex: 2,
-        width: 100,
+        flex: 2,
+        minWidth: 200,
         height: 100,
         backgroundColor: '#aaf100',
         justifyContent: 'center',
@@ -38,16 +39,16 @@ const styles = StyleSheet.create({
     },
     view2: {
         // flex: 1,
-        width: 200,
+        width: 250,
         height: 100,
         backgroundColor: 'pink',
         justifyContent: 'center',
         alignItems: 'center'
     },
     view3: {
-        // flex: 1,
-        width: 100,
-        height: 100,
+        flex: 1,
+        minWidth: 100,
+        height: 150,
         backgroundColor: '#00f1aa',
         justifyContent: 'center',
         alignItems: 'center'
