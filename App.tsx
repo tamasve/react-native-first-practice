@@ -19,6 +19,8 @@ import FlatListUse from './FlatListUse';
 import SectionListUse from './SectionListUse';
 import RefreshedListExercise from './RefreshedListExercise';
 import Input from './Input';
+import InputII from './InputII';
+import InputIII from './InputIII';
 
 
 function App(): React.JSX.Element {
@@ -32,7 +34,7 @@ function App(): React.JSX.Element {
       {/* <FlatListUse /> */}
       {/* <SectionListUse /> */}
       {/* <RefreshedListExercise /> */}
-      <Input />
+      <InputIII />
     </View>
   );
 }

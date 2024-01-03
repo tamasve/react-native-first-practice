@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
 
 
 // Textinput, input-pad changing, pw entry, settings
@@ -7,7 +7,14 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 export default function Input(): React.JSX.Element {
 
     const [name, setName] = useState<string>("");
+    const [submitted, setSubmitted] = useState<boolean>(false);
 
+    const onPressHandler = () => {setSubmitted(!submitted)}
+
+    const pwInputChange = (value: string) => {
+        setName(value);
+        setSubmitted(!submitted);
+    }
 
     return (
         <View style={styles.body}>
@@ -21,6 +28,7 @@ export default function Input(): React.JSX.Element {
             <Text style={styles.text2}>
                 YOU TYPED --- {name}
             </Text>
+            {/* <ScrollView> */}
             <Text style={styles.text}>
                 Give me the PIN:
             </Text>
@@ -29,14 +37,24 @@ export default function Input(): React.JSX.Element {
                         placeholder='your PIN...'
                         onChangeText={setName}
                         maxLength={4}/>
+
+            <Button title={!submitted ? "Submit" : "Inactive"}
+                    onPress={onPressHandler}
+                    disabled={submitted}
+                    color="red"/>
+            <Text style={styles.text}>
+                {submitted && "You already have submitted it"}
+            </Text>
+
             <Text style={styles.text}>
                 Give me the password:
             </Text>
             <TextInput style={styles.input}
                         placeholder='...'
                         secureTextEntry
-                        onChangeText={setName}
+                        onChangeText={(value) => pwInputChange(value)}
                         maxLength={10}/>
+            {/* </ScrollView> */}
         </View>
     )
 
@@ -71,6 +89,7 @@ const styles = StyleSheet.create({
         minWidth: 100,
         fontSize: 22,
         padding: 10,
+        marginBottom: 20,
         textAlign: 'center',
         backgroundColor: '#7af1fa'
     },
