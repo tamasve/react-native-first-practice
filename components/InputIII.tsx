@@ -40,7 +40,7 @@ export default function InputIII(): React.JSX.Element {
             //     ToastAndroid.SHORT);
             ToastAndroid.showWithGravityAndOffset(
                 'Are you crazy??  Void field...',
-                ToastAndroid.SHORT,
+                ToastAndroid.SHORT,             // message will be seen for a short time
                 ToastAndroid.TOP, 0, 0);
 
         }

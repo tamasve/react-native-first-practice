@@ -11,16 +11,17 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import Layout from './Layout';
-import ListScroll from './List-ScrollView';
-import StretchedItems from './StretchedItems';
-import StretchedItems2 from './StretchedItems2';
-import FlatListUse from './FlatListUse';
-import SectionListUse from './SectionListUse';
-import RefreshedListExercise from './RefreshedListExercise';
-import Input from './Input';
-import InputII from './InputII';
-import InputIII from './InputIII';
+import Layout from './components/Layout';
+import ListScroll from './components/List-ScrollView';
+import StretchedItems from './components/StretchedItems';
+import StretchedItems2 from './components/StretchedItems2';
+import FlatListUse from './components/FlatListUse';
+import SectionListUse from './components/SectionListUse';
+import RefreshedListExercise from './components/RefreshedListExercise';
+import Input from './components/Input';
+import InputII from './components/InputII';
+import InputIII from './components/InputIII';
+import Modals from './components/Modals';
 
 
 function App(): React.JSX.Element {
@@ -34,7 +35,10 @@ function App(): React.JSX.Element {
       {/* <FlatListUse /> */}
       {/* <SectionListUse /> */}
       {/* <RefreshedListExercise /> */}
-      <InputIII />
+      {/* <Input /> */}
+      {/* <InputII /> */}
+      {/* <InputIII /> */}
+      <Modals />
     </View>
   );
 }
